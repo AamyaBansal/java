@@ -1,0 +1,66 @@
+import java.io.*;
+import java.util.*;
+
+public class Factorial {
+    public static void main(String[] args) throws IOException {
+        System.out.print("Menu:\n1)Scanner\n2)BufferedReader\n3)Console\n4)command line args\n5) DataInputStream\nEnter choice: ");
+        int num;
+        DataInputStream d = new DataInputStream(System.in);
+        BufferedReader reader = new BufferedReader(new
+                InputStreamReader(System.in));
+        int i = Integer.parseInt(reader.readLine());
+        switch (i) {
+            case 1:
+                Scanner in = new Scanner(System.in);
+                System.out.print("Number : ");
+                num = in.nextInt();
+                long factorial = 1;
+                for (int j = 1; j <= num; ++j) {
+                    factorial *= j;
+                }
+                System.out.printf("Factorial of %d = %d", num,
+                        factorial);
+                break;
+            case 2:
+                System.out.print("Number: ");
+                num = Integer.parseInt(reader.readLine());
+                long fact = 1;
+                for (int j = 1; j <= num; ++j) {
+                    fact *= j;
+                }
+                System.out.printf("Factorial of %d = %d", num,
+                        fact);
+                break;
+            case 3:
+                System.out.print("Number: ");
+                Console c = System.console();
+                num = Integer.parseInt(c.readLine());
+                break;
+            case 4:
+                int s=1;
+                num =Integer.parseInt(args[0]);
+                for(i=1;i<=num;i++)
+
+                {
+                    s=s*i;
+                }
+                System.out.printf("Factorial of %d = %d", num, s);
+            case 5:
+                int n;
+                String z;
+                z = d.readLine();
+                n = Integer.parseInt(z);
+                int f=1;
+                System.out.print("enter the number : ");
+                for(i=1;i<=n;i++)
+                {
+                    f = f * i;
+                }
+                System.out.println("\n"+"factorial of given number "+n+" is : " +f);
+            default:
+                System.out.print("Wrong choice ");
+
+
+        }
+    }
+}
